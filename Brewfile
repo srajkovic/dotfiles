@@ -1,0 +1,8 @@
+brew 'brew-cask'
+brew 'cask'
+brew 'emacs'
+brew 'fpp'
+brew 'git'
+brew 'httpie'
+brew 'vcsh'
+brew 'zsh'

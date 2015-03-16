@@ -1,0 +1,21 @@
+(source gnu)
+(source melpa)
+
+;; general
+(depends-on "flycheck-cask")
+(depends-on "use-package")
+(depends-on "auto-complete")
+(depends-on "exec-path-from-shell")
+(depends-on "flx-ido")
+(depends-on "whitespace-cleanup-mode")
+
+;; c
+(depends-on "cc-mode")
+
+;; python
+(depends-on "anaconda-mode")
+
+;; ocaml
+(depends-on "tuareg")
+(depends-on "merlin")
+
