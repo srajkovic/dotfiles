@@ -1,0 +1,11 @@
+# IDEA
+.idea
+
+# Org Mode
+*.org
+
+# Mac files
+.DS_Store
+
+# iPython NB
+.ipynb_checkpoints/
