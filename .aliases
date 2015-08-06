@@ -48,4 +48,4 @@ alias colorize="~/bin/colorize"
 alias home="vcsh dotfiles"
 alias fuck='$(thefuck $(fc -ln -1))'
 alias remigrate='rake db:drop db:create db:migrate'
-
+alias yolo='git push --force'

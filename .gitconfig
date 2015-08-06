@@ -1,6 +1,6 @@
 [user]
 	name = Stefan Rajkovic
-	email = stefan1rajkovic@gmail.com
+	email = stefan@squareup.com
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore_global
@@ -63,3 +63,4 @@
 	enabled = 1
 [pull]
 	rebase = true
+	
