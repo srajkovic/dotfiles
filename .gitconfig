@@ -1,6 +1,6 @@
 [user]
 	name = Stefan Rajkovic
-	email = stefan@squareup.com
+	email = stefan1rajkovic@gmail.com
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore_global
@@ -63,4 +63,7 @@
 	enabled = 1
 [pull]
 	rebase = true
-	
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

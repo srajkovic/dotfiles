@@ -10,7 +10,7 @@
 (setq user-mail-address "stefan1rajkovic@gmail.com")
 
 ;; cask! yay less downloading stuff manually
-(require 'cask "/usr/local/share/emacs/site-lisp/cask.el")
+(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 
 ;; mouse stuff
@@ -85,38 +85,6 @@
 ;; Org Mode
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
-
-;; UNCOMMENT FOR OCAML SETUP
-;; ;; Ocaml setup
-;; (add-to-list 'load-path "/Users/stefanrajkovic/.opam/system/share/tuareg")
-;; (load "tuareg-site-file")
-
-;; ;; Add opam emacs directory to the load-path
-;; (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
-;; (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
-;; ;; Load merlin-mode
-;; (require 'merlin)
-;; (push "<SHARE_DIR>/emacs/site-lisp" load-path) ; directory containing merlin.el
-;; (setq merlin-command "<BIN_DIR>/ocamlmerlin")  ; needed only if ocamlmerlin not already in your PATH
-;; (autoload 'merlin-mode "merlin" "Merlin mode" t)
-;; (add-hook 'tuareg-mode-hook 'merlin-mode)
-;; (add-hook 'caml-mode-hook 'merlin-mode)
-;; (setq merlin-command 'opam)
-
-;; ;; Setup environment variables using opam
-;; (dolist (var (car (read-from-string (shell-command-to-string "opam config env --sexp"))))
-;;   (setenv (car var) (cadr var)))
-
-;; ;; Update the emacs path
-;; (setq exec-path (append (parse-colon-path (getenv "PATH"))
-;; 						(list exec-directory)))
-
-;; ;; Update the emacs load path
-;; (add-to-list 'load-path (expand-file-name "../../share/emacs/site-lisp"
-;; 										  (getenv "OCAML_TOPLEVEL_PATH")))
-
-;; ;; Automatically load utop.el
-;; (autoload 'utop "utop" "Toplevel for OCaml" t)
 
 (provide 'init)
 ;;; init.el ends here
