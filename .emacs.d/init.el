@@ -42,6 +42,8 @@
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (defun my-flycheck-c-setup ()
+  "Setup for flycheck and C."
+  (interactive)
   (setq flycheck-clang-language-standard "gnu11")
   (setq flycheck-gcc-language-standard "gnu11")
   )
@@ -85,6 +87,62 @@
 ;; Org Mode
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+
+;; OCaml Setup
+;; Added by CS51 setup script -- Tuareg
+(load "/Users/stefanrajkovic/.opam/system/share/emacs/site-lisp/tuareg-site-file")
+(add-to-list 'load-path "/Users/stefanrajkovic/.opam/system/share/emacs/site-lisp/")
+
+;; Added by CS51 setup script -- Merlin
+(setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
+(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
+;; Load merlin-mode
+(require 'merlin)
+;; Start merlin on ocaml files
+(add-hook 'tuareg-mode-hook 'merlin-mode t)
+(add-hook 'caml-mode-hook 'merlin-mode t)
+;; Enable auto-complete
+(setq merlin-use-auto-complete-mode 'easy)
+;; Use opam switch to lookup ocamlmerlin binary
+(setq merlin-command 'opam)
+
+(with-eval-after-load 'merlin
+  ;; Disable Merlin's own error checking
+  (setq merlin-error-after-save nil)
+
+  ;; Enable Flycheck checker
+  (flycheck-ocaml-setup))
+
+(add-hook 'tuareg-mode-hook #'merlin-mode)
+
+;; Added by CS51 setup script -- UTOP
+;; Setup environment variables using opam
+(dolist (var (car (read-from-string (shell-command-to-string "opam config env --sexp"))))
+  (setenv (car var) (cadr var)))
+
+;; Update the emacs path
+(setq exec-path (append (parse-colon-path (getenv "PATH"))
+                        (list exec-directory)))
+
+;; Update the emacs load path
+(add-to-list 'load-path (expand-file-name "../../share/emacs/site-lisp"
+                                          (getenv "OCAML_TOPLEVEL_PATH")))
+
+;; Automatically load utop.el
+(autoload 'utop "utop" "Toplevel for OCaml" t)
+
+(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
+(add-hook 'tuareg-mode-hook 'utop-minor-mode)
+
+;; Stefan's rebinding of C-c C-e to utop, since that's what we've always used, and that's what Tuareg mode uses
+(defun tuareg-mode-keybindings ()
+  "Shadow a few of Tuareg mode's keybindings to use utop instead of the default toplevel."
+  (interactive)
+  (local-unset-key (kbd "C-c C-e"))
+  (local-set-key (kbd "C-c C-e") 'utop-eval-phrase)
+  (local-unset-key (kbd "C-c C-r"))
+  (local-set-key (kbd "C-c C-r") 'utop-eval-region))
+(add-hook 'tuareg-mode-hook 'tuareg-mode-keybindings)
 
 (provide 'init)
 ;;; init.el ends here

@@ -18,4 +18,4 @@
 ;; ocaml
 (depends-on "tuareg")
 (depends-on "merlin")
-
+(depends-on "flycheck-ocaml")
