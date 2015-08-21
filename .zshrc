@@ -39,11 +39,6 @@ if [[ ! -f ~/.setup-previously ]]; then
 	touch ~/.setup-previously
 fi
 
-# Setup square stuff
-if [[ -e "$HOME/.zshrc-square" ]]; then
-	source "$HOME/.zshrc-square"
-fi
-
 # cd into Development
 function cdd() {
 	cd ~/Development
@@ -58,6 +53,9 @@ source ~/.aliases
 
 # run z script
 . ~/bin/z.sh
+
+# chruby auto-change based on .ruby-version files
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # colorize terminal
 colorize
