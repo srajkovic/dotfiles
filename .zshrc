@@ -54,7 +54,8 @@ source ~/.aliases
 # run z script
 . ~/bin/z.sh
 
-# chruby auto-change based on .ruby-version files
+# chruby setup
+source /usr/local/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # colorize terminal
