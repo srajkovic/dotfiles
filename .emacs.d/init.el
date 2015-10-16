@@ -144,5 +144,8 @@
   (local-set-key (kbd "C-c C-r") 'utop-eval-region))
 (add-hook 'tuareg-mode-hook 'tuareg-mode-keybindings)
 
+;; Never ever use a tab
+(setq-default indent-tabs-mode nil)
+
 (provide 'init)
 ;;; init.el ends here

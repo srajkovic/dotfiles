@@ -4,6 +4,7 @@
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore_global
+	whitespace = cr-at-eol
 [credential]
 	helper = osxkeychain
 [push]

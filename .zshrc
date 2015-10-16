@@ -58,5 +58,8 @@ source ~/.aliases
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
+# thefuck setup
+eval "$(thefuck --alias)"
+
 # colorize terminal
 colorize
