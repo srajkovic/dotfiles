@@ -1,4 +1,4 @@
-;; stefanrajkovic-emacs-init --- Stefan Rajkovic's .emacs file
+;; stefan-emacs-init --- Stefan Rajkovic's .emacs file
 
 ;;; Commentary:
 ;;; N/A
@@ -90,8 +90,8 @@
 
 ;; OCaml Setup
 ;; Added by CS51 setup script -- Tuareg
-(load "/Users/stefanrajkovic/.opam/system/share/emacs/site-lisp/tuareg-site-file")
-(add-to-list 'load-path "/Users/stefanrajkovic/.opam/system/share/emacs/site-lisp/")
+(load "/Users/stefan/.opam/system/share/emacs/site-lisp/tuareg-site-file")
+(add-to-list 'load-path "/Users/stefan/.opam/system/share/emacs/site-lisp/")
 
 ;; Added by CS51 setup script -- Merlin
 (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
