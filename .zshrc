@@ -60,6 +60,3 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # thefuck setup
 eval "$(thefuck --alias)"
-
-# colorize terminal
-colorize
