@@ -31,7 +31,7 @@ export EDITOR='emacs'
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # OPAM configuration
-. /Users/stefanrajkovic/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. /Users/stefan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # link my theme in, since .oh-my-zsh is already under VC and I don't want to mess with that
 if [[ ! -f ~/.setup-previously ]]; then
