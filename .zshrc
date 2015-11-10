@@ -60,3 +60,5 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # thefuck setup
 eval "$(thefuck --alias)"
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
