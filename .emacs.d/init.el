@@ -122,27 +122,27 @@
   (local-set-key (kbd "C-c C-r") 'utop-eval-region))
 (add-hook 'tuareg-mode-hook 'tuareg-mode-keybindings)
 
-;; Added by CS51 setup script -- Merlin
-(setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
-(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
-;; Load merlin-mode
-(require 'merlin)
-;; Start merlin on ocaml files
-(add-hook 'tuareg-mode-hook 'merlin-mode t)
-(add-hook 'caml-mode-hook 'merlin-mode t)
-;; Enable auto-complete
-(setq merlin-ac-setup t)
-;; Use opam switch to lookup ocamlmerlin binary
-(setq merlin-command 'opam)
+;; ;; Added by CS51 setup script -- Merlin
+;; (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
+;; (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
+;; ;; Load merlin-mode
+;; (require 'merlin)
+;; ;; Start merlin on ocaml files
+;; (add-hook 'tuareg-mode-hook 'merlin-mode t)
+;; (add-hook 'caml-mode-hook 'merlin-mode t)
+;; ;; Enable auto-complete
+;; (setq merlin-ac-setup t)
+;; ;; Use opam switch to lookup ocamlmerlin binary
+;; (setq merlin-command 'opam)
 
-(with-eval-after-load 'merlin
-  ;; Disable Merlin's own error checking
-  (setq merlin-error-after-save nil)
+;; (with-eval-after-load 'merlin
+;;   ;; Disable Merlin's own error checking
+;;   (setq merlin-error-after-save nil)
 
-  ;; Enable Flycheck checker
-  (flycheck-ocaml-setup))
+;;   ;; Enable Flycheck checker
+;;   (flycheck-ocaml-setup))
 
-(add-hook 'tuareg-mode-hook #'merlin-mode)
+;; (add-hook 'tuareg-mode-hook #'merlin-mode)
 
 ;; Never ever use a tab
 (setq-default indent-tabs-mode nil)

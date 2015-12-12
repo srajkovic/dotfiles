@@ -54,10 +54,6 @@ source ~/.aliases
 # run z script
 . ~/bin/z.sh
 
-# chruby setup
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
 # thefuck setup
 eval "$(thefuck --alias)"
 

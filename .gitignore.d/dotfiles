@@ -9,6 +9,9 @@
 !/.zsh_themes
 !/.zsh_themes/custom-ys.zsh-theme
 !/.zshrc
+!/.irbrc
+!/.gemrc
+!/.osx
 !/Brewfile
 !/README.md
 !/bin

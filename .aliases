@@ -43,6 +43,9 @@ function dxdd {
   fi
 }
 
+# bundle
+alias be='bundle exec'
+
 # Stefan personals
 alias colorize="~/bin/colorize"
 alias home="vcsh dotfiles"
