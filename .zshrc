@@ -60,5 +60,6 @@ eval "$(thefuck --alias)"
 # iTerm setup
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-# Homebrew Cask with all other apps
+# Brew setup and completions
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+fpath=(/usr/local/share/zsh-completions $fpath)
