@@ -21,7 +21,7 @@ $HOME/.rvm/bin\
 /usr/local/bin:\
 /opt/X11/bin:\
 /usr/local/git/bin:\
-/usr/texbin:\
+/Library/TeX/texbin\
 "
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
@@ -57,4 +57,8 @@ source ~/.aliases
 # thefuck setup
 eval "$(thefuck --alias)"
 
+# iTerm setup
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+# Homebrew Cask with all other apps
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
