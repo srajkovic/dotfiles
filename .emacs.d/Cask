@@ -19,3 +19,6 @@
 (depends-on "tuareg")
 (depends-on "merlin")
 (depends-on "flycheck-ocaml")
+
+;; rust
+(depends-on "rust-mode")
