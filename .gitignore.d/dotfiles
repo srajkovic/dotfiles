@@ -1,6 +1,6 @@
 *
 !/.aliases
-!/.emacs.d
+!/.emacs.d/
 !/.emacs.d/Cask
 !/.emacs.d/auto-complete
 !/.emacs.d/init.el
