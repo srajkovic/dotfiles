@@ -1,23 +1,28 @@
 *
-!/.aliases
+
+# emacs stuff
 !/.emacs.d/
 !/.emacs.d/Cask
 !/.emacs.d/auto-complete
 !/.emacs.d/init.el
+
+# gitignore for vcsh
 !/.gitignore.d
 !/.gitignore.d/dotfiles
-!/.zsh_themes
-!/.zsh_themes/custom-ys.zsh-theme
-!/.zshrc
+
+# Ruby setup
 !/.irbrc
 !/.gemrc
+
+# Python (Vex) setup
+!/.vexrc
+
+# OSX setup
 !/.osx
 !/Brewfile
+
+# README
 !/README.md
+
+# scripts etc
 !/bin
-!/bin/batcharge
-!/bin/colorize
-!/bin/first-time
-!/bin/pip_upgrade
-!/bin/subl
-!/bin/z.sh
