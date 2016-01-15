@@ -1,6 +1,7 @@
 cd ~/dotfiles
 brew bundle # download everything in the Brewfile
 chsh -s /usr/local/bin/zsh # switch to brew zsh
+gem install colorize
 rake  # symlink everything into place
 source install_rvm
 rm rvm-installer rvm-installer.asc

@@ -1,3 +1,6 @@
+require 'fileutils'
+require 'colorize'
+
 # Modified from Jack Danger's to grab everything from the dir besides an excluded list
 # because I'd prefer to only add things manually if they need to _not_ be copied
 # and also to use fileutils symlink
@@ -9,14 +12,19 @@ def safe_symlink(source_list, destination_dir)
   overlap = source_list & already_exists
 
   unless overlap.empty?
-    puts "Following files already exist, skipping them:"
+    puts "Following files already exist, skipping them:".green
     puts overlap
     puts 
   end
 
   to_link = (source_list - overlap).map { |file| File.expand_path file }
 
-  symlink to_link, destination_dir, verbose: true unless to_link.empty?
+  unless to_link.empty?
+    puts "Actual command here".red
+    symlink to_link, destination_dir, verbose: true
+    puts
+  end
+  
 end
 
 
@@ -29,14 +37,14 @@ dont_include = [
   'install_rvm',
   'osx',
   'setup',
+  'TODO',
   'zprezto',
   '.emacs.d',
   '.git',
-  '.gitignore_global',
   '.gitmodules',
 ]
 
-require 'fileutils'
+
 task :install do
   # directories to copy over
   emacs_dir = File.join(Dir.home, ".emacs.d")
