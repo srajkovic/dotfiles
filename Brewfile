@@ -47,13 +47,14 @@ brew 'ruby-install'
 brew 'rust'
 brew 'sqlite'
 brew 'ssh-copy-id'
-brew 'thefuck'
+brew 'the_silver_searcher'
 brew 'transmission'
 brew 'vcsh'
 brew 'wget'
 brew 'xz'
 brew 'zsh'
 brew 'zsh-completions'
+
 
 # Casks
 cask_args appdir: '/Applications'

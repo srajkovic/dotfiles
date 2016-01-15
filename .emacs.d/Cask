@@ -12,9 +12,6 @@
 ;; c
 (depends-on "cc-mode")
 
-;; python
-(depends-on "anaconda-mode")
-
 ;; ocaml
 (depends-on "tuareg")
 (depends-on "merlin")
