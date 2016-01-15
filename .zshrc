@@ -14,9 +14,6 @@ function cdd {
 }
 compdef '_files -W "$HOME/Development"' cdd
 
-alias be='bundle exec'
-alias home="vcsh dotfiles"
-
 source ~/dotfiles/aliases
 
 # run z script
