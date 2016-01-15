@@ -16,3 +16,8 @@ source ~/dotfiles/setup
 ```
 
 That should get most everything set up.
+
+## TODO
+Make it independent of dotfiles location?
+Should just be removing hard codes in prezto locations from init.zsh and .zshrc
+And finding a way to persist the location.
