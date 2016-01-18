@@ -88,12 +88,28 @@
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
 
-;; OCaml Setup
-;; Added by CS51 setup script -- Tuareg
-(load "/Users/stefan/.opam/system/share/emacs/site-lisp/tuareg-site-file")
-(add-to-list 'load-path "/Users/stefan/.opam/system/share/emacs/site-lisp/")
+;; Rust
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
-;; Added by CS51 setup script -- UTOP
+;; Added by CS 51 setup script -- Tuareg
+(load "~/.opam/4.02.3/share/emacs/site-lisp/tuareg-site-file")
+(add-to-list 'load-path "~/.opam/system/share/emacs/site-lisp/")
+
+;; Added by CS 51 setup script -- Merlin
+(setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
+(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
+;; Load merlin-mode
+(require 'merlin)
+;; Start merlin on ocaml files
+(add-hook 'tuareg-mode-hook 'merlin-mode t)
+(add-hook 'caml-mode-hook 'merlin-mode t)
+;; Enable auto-complete. This only enables 'M-x auto-complete'. For live autocomplete as you type, replace "'easy"with "t"
+(setq merlin-ac-setup 'easy)
+;; Use opam switch to lookup ocamlmerlin binary
+(setq merlin-command 'opam)
+
+(add-hook 'tuareg-mode-hook #'merlin-mode)
+;; Added by CS 51 setup script -- UTOP
 ;; Setup environment variables using opam
 (dolist (var (car (read-from-string (shell-command-to-string "opam config env --sexp"))))
   (setenv (car var) (cadr var)))
@@ -107,12 +123,12 @@
                                           (getenv "OCAML_TOPLEVEL_PATH")))
 
 ;; Automatically load utop.el
-(autoload 'utop "utop" "Toplevel for OCaml" t)
+(autoload 'utop "utop" "Toplevel for OCaml"t)
 
-(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
+(autoload 'utop-minor-mode "utop" "Minor mode for utop"t)
 (add-hook 'tuareg-mode-hook 'utop-minor-mode)
 
-;; Stefan's rebinding of C-c C-e to utop, since that's what we've always used, and that's what Tuareg mode uses
+;; Rebinding some of Tuareg's bindings to use utop instead of the ocaml toplevel
 (defun tuareg-mode-keybindings ()
   "Shadow a few of Tuareg mode's keybindings to use utop instead of the default toplevel."
   (interactive)
@@ -122,30 +138,12 @@
   (local-set-key (kbd "C-c C-r") 'utop-eval-region))
 (add-hook 'tuareg-mode-hook 'tuareg-mode-keybindings)
 
-;; Added by CS51 setup script -- Merlin
-(setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
-(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
-;; Load merlin-mode
-(require 'merlin)
-;; Start merlin on ocaml files
-(add-hook 'tuareg-mode-hook 'merlin-mode t)
-(add-hook 'caml-mode-hook 'merlin-mode t)
-;; Enable auto-complete
-(setq merlin-ac-setup t)
-;; Use opam switch to lookup ocamlmerlin binary
-(setq merlin-command 'opam)
-
 (with-eval-after-load 'merlin
   ;; Disable Merlin's own error checking
   (setq merlin-error-after-save nil)
 
   ;; Enable Flycheck checker
   (flycheck-ocaml-setup))
-
-(add-hook 'tuareg-mode-hook #'merlin-mode)
-
-;; Rust
-(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
 ;; Never ever use a tab
 (setq-default indent-tabs-mode nil)
