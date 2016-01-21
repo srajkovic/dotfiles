@@ -4,35 +4,35 @@ alias ....="cd ../../.."
 alias e='$EDITOR'
 
 function tableflip {
-  echo "（╯°□°）╯ ┻━┻";
+    echo "（╯°□°）╯ ┻━┻";
 }
 
 function dxdd {
-  if pgrep Xcode >/dev/null; then
-    echo "Cannot delete derived data while Xcode is running!"
-  else
-    echo "Deleting `cd ~/Library/Developer/Xcode; pwd`/DerivedData"
-    rm -rf ~/Library/Developer/Xcode/DerivedData
-  fi
+    if pgrep Xcode >/dev/null; then
+        echo "Cannot delete derived data while Xcode is running!"
+    else
+        echo "Deleting `cd ~/Library/Developer/Xcode; pwd`/DerivedData"
+        rm -rf ~/Library/Developer/Xcode/DerivedData
+    fi
 }
 
 # Thanks Jack Danger (@JackDanger) for these
 alias grab='cat | pbcopy'
 function name {
-  dir=$2;
+    dir=$2;
     [[ -n $dir ]] || dir=.
-      find $dir -name "*$1*"
-      
+    find $dir -name "*$1*"
+    
 }
 
 function dotfiles {
-  cd ~/dotfiles
+    pushd ~/dotfiles
     git add .
-      git commit -m "$*"
-        git pull --rebase
-          git push
-            cd -
-            
+    git commit -m "$*"
+    git pull --rebase
+    git push
+    popd
+    
 }
 
 alias show_hidden_files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
