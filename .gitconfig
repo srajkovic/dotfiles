@@ -1,6 +1,7 @@
 [user]
 	name = Stefan Rajkovic
 	email = stefan1rajkovic@gmail.com
+	signingkey = Stefan Rajkovic <stefan1rajkovic@gmail.com>
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore_global
@@ -68,3 +69,4 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+    

@@ -20,3 +20,5 @@ source ~/dotfiles/aliases
 . ~/bin/z.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
