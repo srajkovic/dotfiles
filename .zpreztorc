@@ -39,7 +39,8 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'python' \
   'ruby' \
-  'syntax-highlighting'
+  'syntax-highlighting' \
+  'history-substring-search'
 
 #
 # Editor
@@ -49,7 +50,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
@@ -68,6 +69,10 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 # History Substring Search
 #
+
+# Set to not highlight because it's weird looking
+zstyle ':prezto:module:history-substring-search' color 'no'
+
 
 # Set the query found color.
 # zstyle ':prezto:module:history-substring-search:color' found ''
