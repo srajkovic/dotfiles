@@ -10,7 +10,7 @@
 (setq user-mail-address "stefan1rajkovic@gmail.com")
 
 ;; cask! yay less downloading stuff manually
-(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+(require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
 ;; mouse stuff
@@ -90,60 +90,6 @@
 
 ;; Rust
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
-
-;; Added by CS 51 setup script -- Tuareg
-(load "~/.opam/4.02.3/share/emacs/site-lisp/tuareg-site-file")
-(add-to-list 'load-path "~/.opam/system/share/emacs/site-lisp/")
-
-;; Added by CS 51 setup script -- Merlin
-(setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
-(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
-;; Load merlin-mode
-(require 'merlin)
-;; Start merlin on ocaml files
-(add-hook 'tuareg-mode-hook 'merlin-mode t)
-(add-hook 'caml-mode-hook 'merlin-mode t)
-;; Enable auto-complete. This only enables 'M-x auto-complete'. For live autocomplete as you type, replace "'easy"with "t"
-(setq merlin-ac-setup 'easy)
-;; Use opam switch to lookup ocamlmerlin binary
-(setq merlin-command 'opam)
-
-(add-hook 'tuareg-mode-hook #'merlin-mode)
-;; Added by CS 51 setup script -- UTOP
-;; Setup environment variables using opam
-(dolist (var (car (read-from-string (shell-command-to-string "opam config env --sexp"))))
-  (setenv (car var) (cadr var)))
-
-;; Update the emacs path
-(setq exec-path (append (parse-colon-path (getenv "PATH"))
-                        (list exec-directory)))
-
-;; Update the emacs load path
-(add-to-list 'load-path (expand-file-name "../../share/emacs/site-lisp"
-                                          (getenv "OCAML_TOPLEVEL_PATH")))
-
-;; Automatically load utop.el
-(autoload 'utop "utop" "Toplevel for OCaml"t)
-
-(autoload 'utop-minor-mode "utop" "Minor mode for utop"t)
-(add-hook 'tuareg-mode-hook 'utop-minor-mode)
-
-;; Rebinding some of Tuareg's bindings to use utop instead of the ocaml toplevel
-(defun tuareg-mode-keybindings ()
-  "Shadow a few of Tuareg mode's keybindings to use utop instead of the default toplevel."
-  (interactive)
-  (local-unset-key (kbd "C-c C-e"))
-  (local-set-key (kbd "C-c C-e") 'utop-eval-phrase)
-  (local-unset-key (kbd "C-c C-r"))
-  (local-set-key (kbd "C-c C-r") 'utop-eval-region))
-(add-hook 'tuareg-mode-hook 'tuareg-mode-keybindings)
-
-(with-eval-after-load 'merlin
-  ;; Disable Merlin's own error checking
-  (setq merlin-error-after-save nil)
-
-  ;; Enable Flycheck checker
-  (flycheck-ocaml-setup))
 
 ;; Never ever use a tab
 (setq-default indent-tabs-mode nil)

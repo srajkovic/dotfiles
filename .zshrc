@@ -19,6 +19,4 @@ source ~/dotfiles/aliases
 # run z script
 . ~/bin/z.sh
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
+export PATH="$PATH:$HOME/.cask/bin" # Add Cask

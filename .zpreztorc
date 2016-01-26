@@ -36,7 +36,6 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'node' \
   'ocaml' \
-  'osx' \
   'python' \
   'ruby' \
   'syntax-highlighting' \
@@ -98,7 +97,7 @@ zstyle ':prezto:module:history-substring-search' color 'no'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'custom_agnoster'
-DEFAULT_USER='stefan'
+DEFAULT_USER='ubuntu'
 
 #
 # Ruby

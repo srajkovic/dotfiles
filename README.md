@@ -1,4 +1,5 @@
 # Stefan Rajkovic's dotfiles
+## Super Rough Ubuntu Version. These are like, chopped apart from the OSX version on master. I'd recommend against them, but I needed some quick fixes
 
 These are my dotfiles. There are many like them, but these are mine.
 
