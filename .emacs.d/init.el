@@ -19,24 +19,27 @@
 (defun track-mouse (e))
 (setq mouse-sel-mode t)
 (global-set-key [mouse-4] (lambda ()
-							(interactive)
-							(scroll-down 1)))
+			    (interactive)
+			    (scroll-down 1)))
 (global-set-key [mouse-5] (lambda ()
-							(interactive)
-							(scroll-up 1)))
+			    (interactive)
+			    (scroll-up 1)))
 
 ;; y or n instead of yes or no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; backup files no longer
+;; backup files and autosave files away from work tree
 (setq
  backup-by-copying t      ; don't clobber symlinks
  backup-directory-alist
- '(("." . "~/.saves"))    ; don't litter my fs tree
+ `((".*" . ,temporary-file-directory))
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2
- version-control t)
+ version-control t
+ auto-save-file-name-transforms
+ `((".*" ,temporary-file-directory t))
+ )
 
 ;; flycheck
 (require 'flycheck)
@@ -69,7 +72,7 @@
 
 ;; generic set up
 (setq-default column-number-mode t
-			  show-paren-mode t)
+	      show-paren-mode t)
 (electric-indent-mode 1)
 (electric-pair-mode 1)
 (show-paren-mode)
@@ -77,12 +80,13 @@
 
 ;; Proper C setup
 (require 'cc-mode)
-(setq-default c-default-style "linux"
-              c-basic-offset 4)
-(setq-default tab-width 4 indent-tabs-mode t)
+(setq-default c-default-style "bsd"
+              c-basic-offset 8
+              tab-width 8
+              indent-tabs-mode t)
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 (add-hook 'c-mode-common-hook
-		  (lambda () (define-key c-mode-base-map (kbd "C-c C-l") 'compile)))
+	  (lambda () (define-key c-mode-base-map (kbd "C-c C-l") 'compile)))
 
 ;; Org Mode
 (setq org-todo-keywords
@@ -103,8 +107,9 @@
 ;; Start merlin on ocaml files
 (add-hook 'tuareg-mode-hook 'merlin-mode t)
 (add-hook 'caml-mode-hook 'merlin-mode t)
-;; Enable auto-complete. This only enables 'M-x auto-complete'. For live autocomplete as you type, replace "'easy"with "t"
-(setq merlin-ac-setup 'easy)
+;; Enable auto-complete. This only enables 'M-x auto-complete'.
+;; For live autocomplete as you type, replace "'easy" with "t"
+(setq merlin-ac-setup t)
 ;; Use opam switch to lookup ocamlmerlin binary
 (setq merlin-command 'opam)
 
@@ -144,9 +149,6 @@
 
   ;; Enable Flycheck checker
   (flycheck-ocaml-setup))
-
-;; Never ever use a tab
-(setq-default indent-tabs-mode nil)
 
 (provide 'init)
 ;;; init.el ends here
