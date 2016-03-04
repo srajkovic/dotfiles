@@ -1,2 +1,2 @@
 # LESS options
-export LESS='-F -g -i -M -R -S -w -X -z-4'
+export LESS='-g -i -M -R -S -w -X -z-4'
