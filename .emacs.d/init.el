@@ -13,6 +13,13 @@
 (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 
+(require 'smex) 
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 ;; mouse stuff
 (require 'mouse)
 (xterm-mouse-mode t)
@@ -54,6 +61,13 @@
 
 ;; whitespace cleanup on file saves/closes! :D
 (require 'whitespace-cleanup-mode)
+
+;; rainbow delimiters
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; column enforcing
+(add-hook 'prog-mode-hook 'column-enforce-mode)
 
 ;; take PATH from shell, not defaults
 (when (memq window-system '(mac ns))
@@ -146,7 +160,7 @@
 (with-eval-after-load 'merlin
   ;; Disable Merlin's own error checking
   (setq merlin-error-after-save nil)
-
+  
   ;; Enable Flycheck checker
   (flycheck-ocaml-setup))
 
