@@ -11,6 +11,7 @@
 (depends-on "column-enforce-mode")
 (depends-on "smex")
 (depends-on "rainbow-delimiters")
+(depends-on "markdown-mode")
 
 ;; c
 (depends-on "cc-mode")
