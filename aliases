@@ -2,6 +2,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias e='$EDITOR'
+alias be='bundle exec'
 
 function tableflip {
     echo "（╯°□°）╯ ┻━┻";
@@ -15,6 +16,8 @@ function dxdd {
         rm -rf ~/Library/Developer/Xcode/DerivedData
     fi
 }
+
+
 
 # Thanks Jack Danger (@JackDanger) for these
 alias grab='cat | pbcopy'
@@ -31,8 +34,7 @@ function dotfiles {
     git commit -m "$*"
     git pull --rebase
     git push
-    popd
-    
+    popd    
 }
 
 alias show_hidden_files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
