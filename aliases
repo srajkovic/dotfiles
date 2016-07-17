@@ -17,8 +17,6 @@ function dxdd {
     fi
 }
 
-
-
 # Thanks Jack Danger (@JackDanger) for these
 alias grab='cat | pbcopy'
 function name {
