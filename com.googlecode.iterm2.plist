@@ -320,7 +320,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -338,7 +338,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>381 184 585 377 0 0 1280 777 </string>
+	<string>244 160 570 377 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>173 29 585 377 0 0 1280 800 </string>
 	<key>New Bookmarks</key>
@@ -1882,6 +1882,10 @@
 			<string>/Users/stefan</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>F8C54924-0B4B-4913-AA44-F7A94EB17E9B</string>
 	<key>NoSyncLastTipTime</key>
@@ -1984,6 +1988,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<true/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>1</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -2034,17 +2040,17 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml?shard=91</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=91</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-04-30T23:19:33Z</date>
+	<date>2016-08-12T02:02:03Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -2086,6 +2092,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160426</string>
+	<string>3.0.5</string>
 </dict>
 </plist>

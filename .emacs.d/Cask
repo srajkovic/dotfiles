@@ -12,6 +12,7 @@
 (depends-on "smex")
 (depends-on "rainbow-delimiters")
 (depends-on "markdown-mode")
+(depends-on "yaml-mode")
 
 ;; c
 (depends-on "cc-mode")
