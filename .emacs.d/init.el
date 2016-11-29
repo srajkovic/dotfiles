@@ -6,6 +6,13 @@
 ;;; Code:
 
 ;; establish ownership
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq user-full-name "Stefan Rajkovic")
 (setq user-mail-address "stefan1rajkovic@gmail.com")
 
@@ -91,6 +98,7 @@
 (electric-pair-mode 1)
 (show-paren-mode)
 (auto-insert-mode)
+(define-key global-map "\M-*" 'pop-tag-mark)
 
 ;; Proper C setup
 (require 'cc-mode)
