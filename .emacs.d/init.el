@@ -16,11 +16,16 @@
 (setq user-full-name "Stefan Rajkovic")
 (setq user-mail-address "stefan1rajkovic@gmail.com")
 
-;; cask! yay less downloading stuff manually
+;; cask/pallet! yay less downloading stuff manually
 (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
+(require 'pallet)
+(pallet-mode t)
 
-(require 'smex) 
+;; for remote stuff
+(setq tramp-default-method "ssh")
+
+(require 'smex)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -58,6 +63,7 @@
 ;; flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(setq flycheck-eslintrc "~/.eslintrc")
 (defun my-flycheck-c-setup ()
   "Setup for flycheck and C."
   (interactive)
@@ -68,6 +74,7 @@
 
 ;; whitespace cleanup on file saves/closes! :D
 (require 'whitespace-cleanup-mode)
+(setq-default show-trailing-whitespace t)
 
 ;; rainbow delimiters
 (require 'rainbow-delimiters)
@@ -171,6 +178,22 @@
   
   ;; Enable Flycheck checker
   (flycheck-ocaml-setup))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t)
+ '(package-selected-packages
+   (quote
+    (pallet yaml-mode whitespace-cleanup-mode use-package tuareg smex rust-mode rainbow-delimiters markdown-mode flycheck-rust flycheck-ocaml flycheck-cask flx-ido exec-path-from-shell column-enforce-mode auto-complete))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 (provide 'init)
 ;;; init.el ends here
