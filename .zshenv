@@ -11,3 +11,4 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
 fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+

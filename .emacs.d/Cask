@@ -28,5 +28,6 @@
 (depends-on "smex")
 (depends-on "tuareg")
 (depends-on "use-package")
+(depends-on "utop")
 (depends-on "whitespace-cleanup-mode")
 (depends-on "yaml-mode")

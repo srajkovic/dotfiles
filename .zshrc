@@ -60,3 +60,4 @@ if brew command command-not-found-init > /dev/null; then eval "$(brew command-no
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
