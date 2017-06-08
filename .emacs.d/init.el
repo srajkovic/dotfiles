@@ -7,6 +7,8 @@
 
 ;; establish ownership
 
+(setq debug-on-error t)
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -140,21 +142,28 @@
   ;; Disable Merlin's own error checking
   (setq merlin-error-after-save nil)
   ;; Enable Flycheck checker
-  (flycheck-ocaml-setup))
+  (flycheck-ocaml-setup)
+  (setq merlin-ac-setup t))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (solarized-dark)))
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (pallet yaml-mode whitespace-cleanup-mode use-package tuareg smex rust-mode rainbow-delimiters markdown-mode flycheck-rust flycheck-ocaml flycheck-cask flx-ido exec-path-from-shell column-enforce-mode auto-complete utop))))
+    (solarized-theme pallet yaml-mode whitespace-cleanup-mode use-package tuareg smex rust-mode rainbow-delimiters markdown-mode flycheck-rust flycheck-ocaml flycheck-cask flx-ido exec-path-from-shell column-enforce-mode auto-complete utop))))
 
 (provide 'init)
 ;;; init.el ends here
-;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
-;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
-(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
-;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

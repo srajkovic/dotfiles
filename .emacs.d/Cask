@@ -26,6 +26,7 @@
 (depends-on "seq")
 (depends-on "shut-up")
 (depends-on "smex")
+(depends-on "solarized-theme")
 (depends-on "tuareg")
 (depends-on "use-package")
 (depends-on "utop")

@@ -40,7 +40,8 @@ zstyle ':prezto:load' pmodule \
   'python' \
   'ruby' \
   'syntax-highlighting' \
-  'history-substring-search'
+  'history-substring-search' \
+  'zsh-pandoc-completion'
 
 #
 # Editor
