@@ -123,28 +123,6 @@
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
 
-(load "/Users/stefan/.opam/system/share/emacs/site-lisp/tuareg-site-file")
-
-;; Add the opam lisp dir to the emacs load path
-(add-to-list
- 'load-path
- (replace-regexp-in-string
-  "\n" "/share/emacs/site-lisp"
-  (shell-command-to-string "opam config var prefix")))
-
-;; Automatically load utop.el
-(autoload 'utop "utop" "Toplevel for OCaml" t)
-(setq utop-command "opam config exec -- utop -emacs")
-(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
-(add-hook 'tuareg-mode-hook 'utop-minor-mode)
-
-(with-eval-after-load 'merlin
-  ;; Disable Merlin's own error checking
-  (setq merlin-error-after-save nil)
-  ;; Enable Flycheck checker
-  (flycheck-ocaml-setup)
-  (setq merlin-ac-setup t))
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -157,7 +135,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (solarized-theme pallet yaml-mode whitespace-cleanup-mode use-package tuareg smex rust-mode rainbow-delimiters markdown-mode flycheck-rust flycheck-ocaml flycheck-cask flx-ido exec-path-from-shell column-enforce-mode auto-complete utop))))
+    (solarized-theme pallet yaml-mode whitespace-cleanup-mode use-package smex rust-mode rainbow-delimiters markdown-mode flycheck-rust flycheck-cask flx-ido exec-path-from-shell column-enforce-mode auto-complete))))
 
 (provide 'init)
 ;;; init.el ends here
