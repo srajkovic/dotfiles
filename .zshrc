@@ -61,5 +61,12 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# For NVM
+export NVM_DIR="/Users/stefan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# For brew
+export PATH="/usr/local/sbin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
