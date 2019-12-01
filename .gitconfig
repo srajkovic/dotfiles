@@ -20,7 +20,6 @@
 [merge]
 	summary = true
 	conflictstyle = diff3
-	ff = only
 [rebase]
 	autosquash = true
 [color]
