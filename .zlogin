@@ -5,8 +5,7 @@ EDITOR='emacs'
 SSH_KEY_PATH="~/.ssh/id_rsa"
 HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # iTerm setup
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
